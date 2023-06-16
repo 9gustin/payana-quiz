@@ -85,7 +85,11 @@ export const QuizStepper: FC<{
                 />
               }
             >
-              <Button disabled={!getValue(id)} onClick={buildGoTo(id, index)}>
+              <Button
+                disabled={!getValue(id)}
+                onClick={buildGoTo(id, index)}
+                data-currentFocus={activeStep === index}
+              >
                 <Typography
                   textAlign="left"
                   color="text.primary"
@@ -131,9 +135,9 @@ export const QuizStepper: FC<{
             variant="contained"
           >
             <Typography
-              color="text.secondary"
               fontWeight="bold"
               textTransform="none"
+              color="text.secondary"
             >
               Guardar mis respuestas
             </Typography>
